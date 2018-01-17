@@ -16,6 +16,8 @@
     alert('Bienvenue sur le jeu !');
   });
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  //boucle +300 a chaque fois que la fonction bouge, la faire bouger 2x
+//HAUT
   $(document).keyup(function(touche){ // on écoute l'évènement keyup()
       var appui = touche.which || touche.keyCode; // le code est compatible tous navigateurs grâce à ces deux propriétés
       if(appui == 38){
