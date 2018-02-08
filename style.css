@@ -10,7 +10,6 @@ body{
 #cadre{
   width: 350px;
   height: 550px;
-  margin-top: 100px;
   background-image: url(background.png);
   background-repeat: no-repeat;
   display: flex;
@@ -27,5 +26,8 @@ body{
 .pipe{
   position: absolute;
   z-index: 30;
+  margin-left: 150px;
+  margin-top: 0px;
+  padding-bottom: 650px;
 }
 /*flappy bug a cause des positions, son positionnement est relatif à la position du flappy*/
