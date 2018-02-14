@@ -79,7 +79,18 @@
       }
   });
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  // var obj = {
+  //   'genre' : 'M',
+  //   'couleurYeux' : 'bleu',
+  //   'cheveux' : 'brun',
+  //   'peau' : 'consion',
+  // };
+
+  $("body").click(function(elem){
+    console.log(elem);
+  });
+
+  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 //DEFILEMENT RANDOM
 //tant que flappy n'a pas toucher un PIPE faire tourner la fonction
@@ -87,7 +98,7 @@
 //mettre des valeurs randoms pour la position
 function genererObstacle(){
   for (var i=1; i<6; i++) {
-    console.log(i);
+  console.log(i);
 }
 }
 
