@@ -79,15 +79,13 @@
       }
   });
 
-  // var obj = {
-  //   'genre' : 'M',
-  //   'couleurYeux' : 'bleu',
-  //   'cheveux' : 'brun',
-  //   'peau' : 'consion',
-  // };
+  var obj = {
+    'type' : 'click',
+    'KeyCode' : 'keydown()',
+  };
 
-  $("body").click(function(elem){
-    console.log(elem);
+  $(document).keydown(function(elem){
+    console.log(elem.keyCode);
   });
 
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
