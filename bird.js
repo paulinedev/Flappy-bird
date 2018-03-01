@@ -14,7 +14,7 @@
 //FENETRE ALERT
   $('.flappy').click(function() {
     alert('Bienvenue');
-    $(".pipe").animate({marginRight: "500px"}, "slow");
+    $(".pipe").animate({marginRight: "+=500px"}, "slow");
   });
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -23,6 +23,32 @@
     $(".flappy").animate({marginBottom: "+=100px"});
   }
 // }
+//PIPE
+  $(".pipe").animate({marginRight: "+=350px"}, speed=2000, "swing");
+//TOUT
+  $(document).keydown(function(elem){ // on écoute l'évènement keyup()
+      var appui = elem.keyCode; // le code est compatible tous navigateurs grâce à ces deux propriétés
+      //BAS
+      if(appui == 40){
+      $(".flappy").animate({marginTop: "+=100px"});
+      }
+      //HAUT
+      else if(appui == 38){
+          animeSaut();
+      }
+      //DROITE
+      else if(appui == 39){
+      $(".flappy").animate({marginLeft: "+=100px"});
+      }
+      //GAUCHE
+      else if(appui == 37){
+        $(".flappy").animate({marginRight: "+=100px"});
+      };
+
+      if (appui == 40 || appui == 38 || appui == 39 || appui == 37){
+        $(".pipe").animate({marginRight: "+=500px"}, "slow");
+      };
+  });
 
   //boucle +300 a chaque fois que la fonction bouge, la faire bouger 2x
 //HAUT
@@ -58,35 +84,15 @@
 //         $(".flappy").animate({marginRight: "+=100px"});
 //       }
 //   });
-//TOUT
-  $(document).keydown(function(elem){ // on écoute l'évènement keyup()
-      var appui = elem.which || elem.keyCode; // le code est compatible tous navigateurs grâce à ces deux propriétés
-      //BAS
-      if(appui == 40){
-      $(".flappy").animate({marginTop: "+=100px"});
-      }
-      //HAUT
-      else if(appui == 38){
-          animeSaut();
-      }
-      //DROITE
-      else if(appui == 39){
-      $(".flappy").animate({marginLeft: "+=100px"});
-      }
-      //GAUCHE
-      else if(appui == 37){
-        $(".flappy").animate({marginRight: "+=100px"});
-      }
-  });
 
-  var obj = {
-    'type' : 'click',
-    'KeyCode' : 'keydown()',
-  };
-
-  $(document).keydown(function(elem){
-    console.log(elem.keyCode);
-  });
+  // var obj = {
+  //   'type' : 'click',
+  //   'KeyCode' : 'keydown()',
+  // };
+  //
+  // $(document).keydown(function(elem){
+  //   console.log(elem.keyCode);
+  // });
 
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -94,12 +100,11 @@
 //tant que flappy n'a pas toucher un PIPE faire tourner la fonction
 //pour i = infinie creer des pipe -> stocker dans un array et appelé par un id
 //mettre des valeurs randoms pour la position
-function genererObstacle(){
-  for (var i=1; i<6; i++) {
-  console.log(i);
-}
-}
-
+// function genererObstacle(){
+//   for (var i=1; i<6; i++) {
+//   console.log(i);
+// }
+// }
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -18,6 +18,9 @@ body{
   overflow: hidden;
   position: relative;
 }
+a{
+  visibility: visible;
+}
 .flappy{
   width: 30%;
   position: relative;
@@ -29,5 +32,5 @@ body{
   margin-left: 150px;
   margin-top: 0px;
   padding-bottom: 650px;
+  right: 0;
 }
-/*flappy bug a cause des positions, son positionnement est relatif à la position du flappy*/
