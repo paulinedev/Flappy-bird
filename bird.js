@@ -23,8 +23,10 @@
     $(".flappy").animate({marginBottom: "+=100px"});
   }
 // }
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //PIPE
-  $(".pipe").animate({marginRight: "+=350px"}, speed=2000, "swing");
+  $(".pipe").animate({marginRight: "350px"}, speed=2000, "swing");
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //TOUT
   $(document).keydown(function(elem){ // on écoute l'évènement keyup()
       var appui = elem.keyCode; // le code est compatible tous navigateurs grâce à ces deux propriétés
@@ -43,10 +45,6 @@
       //GAUCHE
       else if(appui == 37){
         $(".flappy").animate({marginRight: "+=100px"});
-      };
-
-      if (appui == 40 || appui == 38 || appui == 39 || appui == 37){
-        $(".pipe").animate({marginRight: "+=500px"}, "slow");
       };
   });
 
