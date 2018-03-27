@@ -25,7 +25,7 @@
 // }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //PIPE
-  $(".pipe").animate({marginRight: "350px"}, speed=2000, "swing");
+  $(".pipe").animate({marginRight: "550px"}, speed=2000, "swing");
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //TOUT
   $(document).keydown(function(elem){ // on écoute l'évènement keyup()
@@ -94,15 +94,37 @@
 
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-//DEFILEMENT RANDOM
-//tant que flappy n'a pas toucher un PIPE faire tourner la fonction
-//pour i = infinie creer des pipe -> stocker dans un array et appelé par un id
-//mettre des valeurs randoms pour la position
-// function genererObstacle(){
-//   for (var i=1; i<6; i++) {
-//   console.log(i);
-// }
-// }
+// DEFILEMENT RANDOM
+for (var i = 0; i < 10; i++) {
+  setInterval(genererObstacle, 1000);
+  // genererObstacle();
+};
+
+function genererObstacle(){
+
+  //CREER UNE HAUTEUR ALEATOIRE
+  var nbr = Math.random() * 1000;
+  var arr = Math.round(nbr);
+  if (arr < 500){
+    arr = arr + 250;
+  };
+  // console.log(arr);
+
+  // CREER UN NOUVEAU PIPE
+  // var i = 1;
+  // var nomID = 'pipe' + i;
+
+  //PIPE
+  $("#cadre").append("<img class='pipe' src='pipe.png' />");
+  $(".pipe").css('padding-bottom', arr);
+  $(".pipe").animate({marginRight: "550px"}, speed=2000, "linear");
+  // var tuyeau = document.getElementById('nomID');
+  // tuyeau.addEventListener("click", modifieHauteur, false);
+  // function modifieHauteur(){
+  //   var elem = document.getElementById('nomID');
+  //   elem.style.marginBottom = arr;
+  // };
+};
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
