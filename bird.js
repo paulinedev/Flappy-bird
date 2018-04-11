@@ -95,29 +95,39 @@
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 // DEFILEMENT RANDOM
-for (var i = 0; i < 10; i++) {
-  setInterval(genererObstacle, 1000);
-  // genererObstacle();
-};
+// for (var i = 0; i < 100; i++) {
+//   setInterval(genererObstacle, 1000);
+//   // genererObstacle();
+// };
+var i = 0;
+//créer un booleen à l'exterieur de la fonction
 
 function genererObstacle(){
 
   //CREER UNE HAUTEUR ALEATOIRE
   var nbr = Math.random() * 1000;
   var arr = Math.round(nbr);
-  if (arr < 500){
+  if (arr < 600){
     arr = arr + 250;
   };
-  // console.log(arr);
+  console.log(arr);
 
+  i++;
   // CREER UN NOUVEAU PIPE
-  // var i = 1;
-  // var nomID = 'pipe' + i;
+  var nomID = 'pipe' + i;
+  console.log(nomID);
+
 
   //PIPE
-  $("#cadre").append("<img class='pipe' src='pipe.png' />");
-  $(".pipe").css('padding-bottom', arr);
-  $(".pipe").animate({marginRight: "550px"}, speed=2000, "linear");
+  if (i%2 == 0) {
+    $("#cadre").append("<img class='pipe obstacleBas' id='" + nomID + "'src='pipe.png' />");
+    $("#"+ nomID).css('padding-top', arr);
+  } else {
+    $("#cadre").append("<img class='pipe obstacleHaut' id='" + nomID + "'src='pipe.png' />");
+    $("#"+ nomID).css('padding-bottom', arr);
+  };
+  $("#"+ nomID).animate({marginRight: "550px"}, speed=2000, "linear");
+
   // var tuyeau = document.getElementById('nomID');
   // tuyeau.addEventListener("click", modifieHauteur, false);
   // function modifieHauteur(){
@@ -125,6 +135,9 @@ function genererObstacle(){
   //   elem.style.marginBottom = arr;
   // };
 };
+
+  setInterval(genererObstacle, 1000);
+
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
